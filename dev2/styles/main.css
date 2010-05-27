@@ -1,0 +1,183 @@
+* { margin:0; padding:0; }
+body {
+	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: #3d383a;
+}
+
+#top {
+	position: relative;
+	width: 100%;
+	height: 75px;	
+	text-align: center;
+}
+	#topText{
+		position: relative;
+		top: 14px;
+		width: 960px;
+		height: 100%;
+		color:#6f666a;
+		text-shadow: #000 0 -1px;
+		text-align: left;
+		margin: 0 auto;	
+		z-index: 2;
+	}
+
+#screen {
+	position: relative;
+	width: 100%;
+	height: 450px;	
+	text-align: center;
+}
+	#s1{
+		display: block;
+	}
+	#s2{
+	}
+	#s3{
+	}
+	#s4{
+	}
+	#s5{
+	}
+	#s6{
+	}
+		#s1C{
+		}
+			.s1Block{
+				position: relative;
+				float: left;
+				width: 31%;
+				padding: 8px;
+			}
+			#s1Loader{
+				position: absolute;
+				top:192px;
+				width: 100%;
+				background-color: #003636;
+				text-align: center;
+			}
+			
+		#s2C{
+		}
+			.s2Block{
+				position: relative;
+				float: left;
+				width: 31%;
+				padding: 8px;
+			}
+			.s2text{
+				position: relative;
+				padding-top: 2px;
+				height: 29px;
+			
+			}
+			.s2outerIMG{
+				position: absolute;
+				top: 340px;
+			}
+			.s2innerIMG{
+				position: relative;
+				padding-top: 2px;
+			}
+			
+		#s3C{
+		}
+			.s3Block{
+				position: relative;
+				float: left;
+				width: 31%;
+				padding: 8px;
+			}
+			.portIMG{
+				padding-top: 14px; 
+			}
+			#s3Mid{
+				margin-top: 14px;
+				border: 2px solid #B62F2F;
+			}
+		#s4C{
+		}
+		#s5C{
+		}
+		#s6C{
+		}
+
+#bottom{
+	position: relative;
+	height: 50px;
+	padding: 5px;	
+	text-align: center;
+	color:#dffff7;
+
+}
+
+#top h1{
+	font-size: 62px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+.panel {
+	position: absolute;
+	top:0px;
+	width: 100%;
+	height: 450px;
+	text-align: center;
+	display: none;
+	background-color:#595557;
+	
+	
+	font-size: 14px;
+	font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+	color:#FFFFFF;
+	text-shadow: #000 1px 1px;
+}
+.panel ul{
+	font-size: 14px;
+	font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+	padding-left: 20px;
+	padding-top: 15px;
+
+}
+.panel a{
+	color:#5bcbf5;
+	text-shadow: #000 1px 1px;
+}
+
+.panel a:hover{
+	color:#f35126;
+}
+.panel h2{
+	font-size: 28px;
+	font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+	border-bottom-color: #FFFFFF;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	color:#FFFFFF;
+	text-shadow: #000 1px 1px;
+	cursor: pointer;
+}
+.panel h2:hover{
+	color:#5bcbf5;
+
+}
+
+.panelCenter{
+	position: relative;
+	width: 960px;
+	height: 100%;
+	text-align: left;
+	margin: 0 auto;		
+}
+
+#bottom a{
+	color:#6f666a;
+	text-shadow: #000 0 -1px;
+
+}
+#bottom a:hover{
+	color:#5bcbf5;
+}
+
+img {
+	border-style: none;
+}
