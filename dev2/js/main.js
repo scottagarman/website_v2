@@ -2,13 +2,10 @@ $(function (){
 	
 	//HISTORY
 	function load(page) {
-    	//$('#content').load(num +".html");
-    	alert("URLID: " + '#'+page);
     	$('#'+page).click();
     }
 	
     $.history.init(function(url) {
-    	alert("INIT URL: " + url);
     	if(url == ""){
     		$('#s1').load('home.html', function(a, b, c) {});
     	}else{
