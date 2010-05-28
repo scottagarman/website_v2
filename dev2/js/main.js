@@ -6,7 +6,6 @@ $(function (){
 	$('#s2, #s3, #s4, #s5, #s6').css({opacity:0});
 	
 	function cFinder(page){
-		alert("This is the link id: "+page);
 		switch(page){
 			case 'home':
 				return $('#s1');
@@ -33,7 +32,6 @@ $(function (){
 	
 	$('.navLink').click(function(){			
 		//handle history
-		alert("onClick");
         $.history.load($(this).attr('id'));
         return false;
 	});
@@ -44,14 +42,11 @@ $(function (){
 		var clickee = page;
 		var cPage = cFinder(page);
 		
-		alert("onLoad(): clickee= " + clickee + " cPage id:" + $(cPage).attr('id'));
-		
 		if(cPage === null){
 			//don't do ne thing cuz this link is not local
 		}else{
 			if(selected == "new"){
 				$(cPage).load(clickee+'.html', function(a, b, c) {
-					alert('first time page load');
 			 		$(cPage).show();
 					$('#s1').stop().animate({
 						opacity: 0,
@@ -72,7 +67,6 @@ $(function (){
 					//nothing
 				}else{
 					$(cPage).load(clickee+'.html', function(a, b, c) {
-						alert('any other link click load');
 				 		$(cPage).show();
 						selected.stop().animate({
 							opacity: 0,
@@ -94,7 +88,6 @@ $(function (){
     }
     
 	$.history.init(function(url) {
-	alert('in history');
     	if(url == ""){
     		load('home');
     		//selected = $('#s1');
