@@ -4,6 +4,91 @@ $(function (){
 
 	//SCROLL SCREEN	
 	$('#s2, #s3, #s4, #s5, #s6').css({opacity:0});
+	
+	
+	function cFinder(page){
+		alert("This is the link id: "+page);
+		switch(page){
+			case 'home':
+				return $('#s1');
+				break;
+			case 'about':
+				return $('#s2');
+				break;
+			case 'portfolio':
+				return $('#s3');
+				break;
+			case 'resume':
+				return $('#s4');
+				break;
+			case 'blog':
+				return $('#s5');
+				break;
+			case 'contact':
+				return $('#s6');
+				break;
+			default:
+				return $('#s1');
+		}
+	}
+	
+	
+	$('.navLink').click(function(){
+		alert("onClick");
+		var clickee = $(this).attr('id');
+		var cPage = cFinder($(this).attr('id'));
+		
+		alert("onClick(): clickee= " + clickee + " cPage id:" + $(cPage).attr('id'));
+		
+		if(selected == "new"){
+			$(cPage).load(clickee+'.html', function(a, b, c) {
+				alert('first time page load');
+		 		$(cPage).show();
+				$('#s1').stop().animate({
+					opacity: 0,
+				  }, 750, function() {
+				    // Animation complete.
+				    $('#s1').hide();
+				});
+				$(cPage).stop().animate({
+					opacity: 1,
+				  }, 750, function() {
+				    // Animation complete.
+				    $('#topText').html("<h1>"+clickee+"</h1>");
+				    selected = $(this);
+				});	 			
+			});
+		}else{
+			if($(selected).attr('id') == $(cPage).attr('id')){
+				//nothing
+			}else{
+				$(cPage).load(clickee+'.html', function(a, b, c) {
+					alert('any other link click load');
+			 		$(cPage).show();
+					selected.stop().animate({
+						opacity: 0,
+					  }, 750, function() {
+					    // Animation complete.
+					    selected.hide();
+					});
+					$(cPage).stop().animate({
+						opacity: 1,
+					  }, 750, function() {
+					    // Animation complete.
+					    $('#topText').html("<h1>"+clickee+"</h1>");
+					    selected = $(this);
+					});	 			
+				});
+			}
+			
+			//handle history
+			var url = "#" + clickee;
+	        url = url.replace(/^.*#/, '');
+	        $.history.load(url);
+	        return false;
+		}
+	});
+	/*
 	//correct version!
 	$('#home').click(function(){
 		if(selected == "new"){
@@ -279,7 +364,7 @@ $(function (){
 	});		
 	
 	
-	
+	*/
 	
 	//old
 	/*
@@ -426,6 +511,7 @@ $(function (){
     }
     
 	$.history.init(function(url) {
+	alert('in history');
     	if(url == ""){
     		$('#home').click();
     		//selected = $('#s1');
